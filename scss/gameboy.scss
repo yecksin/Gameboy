@@ -1,0 +1,142 @@
+body {
+    // border: rgb(18, 165, 18) solid 1px; 
+    height: 100vh;
+    background: $fondo;
+    padding: 0;
+    margin: 0;
+    margin: 0;
+
+    .contenedor {
+        // border: white solid 1px;
+        border-radius: 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .gameboy {
+            border-radius: 15px ;
+            background-color: $gameboy;
+            width: 320px;
+            height: 550px;
+
+            .pantalla {
+               
+                width: 100%;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .capa1{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    // background-color: rosybrown;
+                    background-color: $gris;
+                    width: 280px;
+                    height: 240px;
+                    border-radius: 10px;
+                    .capa2{
+                        background-color: royalblue;
+                        background-color: gray;
+                        width: 200px;
+                        height: 160px;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            .controles {
+                // background-color: white;
+                width: 100%;
+                height: 200px;
+                display: grid;
+                grid-template-columns: 45% 10% 45%;
+
+                .cruz{
+                    // background-color: green;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .cruz-contenedor{
+                        // background-color: yellow;
+                        width: 90px;
+                        height: 90px;
+                        .box{
+                            display: inline-block;
+                            // background-color: aqua;
+                            width: 30px;
+                            height: 30px;
+                            padding: 0;
+                            margin: 0;
+                            border: 0;
+                            margin: 0 -4px -4px  0;
+                        }
+                        .btn{
+                            background-color: $gris;
+                        }
+                        #arriba{
+                            border-radius: 5px 5px 0px 0px;
+                        }
+                        #izq{
+                            border-radius: 5px 0px 0px 5px;
+                        }
+                        #medio{
+                            border-radius: 0px 0px 0px 0px;
+                        }
+                        #der{
+                            border-radius: 0px 5px 5px 0px;
+                        }
+                        #abajo{
+                            border-radius: 0px 0px 5px 5px;
+                        }
+                    }
+                }
+                .espacio{
+                    // background-color: hotpink;
+                }
+                .botones{
+                    // background-color: blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .botones-contenedor{
+                        // background-color: rgb(153, 177, 22);
+                        width: 80%;
+                        .a-contenedor{
+                            position: relative;
+                            height: 25px;
+                           
+                            .a{
+                                position: absolute;
+                                right: 0px;
+                                width: 40px;
+                                height: 40px;
+                                background-color: $gris;
+                                border-radius: 100px;
+                            }
+                        }
+                        .b-contenedor{
+                            .b{
+                                width: 40px;
+                                height: 40px;
+                                background-color:  $gris;
+                                border-radius: 100px;
+                            }
+                        }
+                    }
+
+                   
+ 
+                }
+            }
+
+            .base {
+               background-color: black;
+                width: 100%;
+                height: 50px;
+                border-radius: 0px 0px 100% 100%;
+            }
+        }
+    }
+}

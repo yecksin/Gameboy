@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap");
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.titulo {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle, #3b3b98 0%, #182c61 100%);
+  padding: 0;
+  margin: 0;
+  margin: 0;
+}
+body .contenedor {
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .contenedor .gameboy {
+  border-radius: 15px;
+  background-color: #55E6C1;
+  width: 320px;
+  height: 550px;
+}
+body .contenedor .gameboy .pantalla {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .contenedor .gameboy .pantalla .capa1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3f3e3e;
+  width: 280px;
+  height: 240px;
+  border-radius: 10px;
+}
+body .contenedor .gameboy .pantalla .capa1 .capa2 {
+  background-color: royalblue;
+  background-color: gray;
+  width: 200px;
+  height: 160px;
+  border-radius: 10px;
+}
+body .contenedor .gameboy .controles {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 45% 10% 45%;
+}
+body .contenedor .gameboy .controles .cruz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor {
+  width: 90px;
+  height: 90px;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor .box {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  margin: 0 -4px -4px 0;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor .btn {
+  background-color: #3f3e3e;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor #arriba {
+  border-radius: 5px 5px 0px 0px;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor #izq {
+  border-radius: 5px 0px 0px 5px;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor #medio {
+  border-radius: 0px 0px 0px 0px;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor #der {
+  border-radius: 0px 5px 5px 0px;
+}
+body .contenedor .gameboy .controles .cruz .cruz-contenedor #abajo {
+  border-radius: 0px 0px 5px 5px;
+}
+body .contenedor .gameboy .controles .botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .contenedor .gameboy .controles .botones .botones-contenedor {
+  width: 80%;
+}
+body .contenedor .gameboy .controles .botones .botones-contenedor .a-contenedor {
+  position: relative;
+  height: 25px;
+}
+body .contenedor .gameboy .controles .botones .botones-contenedor .a-contenedor .a {
+  position: absolute;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  background-color: #3f3e3e;
+  border-radius: 100px;
+}
+body .contenedor .gameboy .controles .botones .botones-contenedor .b-contenedor .b {
+  width: 40px;
+  height: 40px;
+  background-color: #3f3e3e;
+  border-radius: 100px;
+}
+body .contenedor .gameboy .base {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  border-radius: 0px 0px 100% 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
