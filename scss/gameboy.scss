@@ -7,18 +7,21 @@ body {
     margin: 0;
 
     .contenedor {
+        
         // border: white solid 1px;
         border-radius: 10px;
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        flex-flow: column;
 
         .gameboy {
-            border-radius: 15px ;
+            margin-top: 30px;
+            display: block;
+            border-radius: 15px 15px 0px 0px;
             background-color: $gameboy;
             width: 320px;
-            height: 550px;
+            height: 500px;
 
             .pantalla {
                
@@ -52,6 +55,7 @@ body {
                 height: 200px;
                 display: grid;
                 grid-template-columns: 45% 10% 45%;
+                grid-template-rows: 60% 40%;
 
                 .cruz{
                     // background-color: green;
@@ -71,6 +75,11 @@ body {
                             margin: 0;
                             border: 0;
                             margin: 0 -4px -4px  0;
+                            &:hover{
+                                opacity: .9;
+                                color: white;
+                                
+                            }
                         }
                         .btn{
                             background-color: $gris;
@@ -93,7 +102,23 @@ body {
                     }
                 }
                 .espacio{
-                    // background-color: hotpink;
+                    position: relative;
+                    .mini-btn{
+                        margin-top: 25px;
+                        background-color: $gris;
+                        width: 40px;
+                        height: 15px;
+                        border-radius: 10px;
+                        &:hover{
+                            opacity: .9;
+                            color: white;
+                        }
+                    }
+                    .select-contenedor{
+                        position: absolute;
+                        right: 0;
+                    }
+            
                 }
                 .botones{
                     // background-color: blue;
@@ -102,26 +127,46 @@ body {
                     justify-content: center;
                     .botones-contenedor{
                         // background-color: rgb(153, 177, 22);
-                        width: 80%;
+                        width: 70%;
                         .a-contenedor{
                             position: relative;
                             height: 25px;
                            
                             .a{
+                                font-family: 'Poppins', sans-serif;
+                                font-size: 30px;
+                                color: $gris-claro;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
                                 position: absolute;
                                 right: 0px;
                                 width: 40px;
                                 height: 40px;
                                 background-color: $gris;
                                 border-radius: 100px;
+                                &:hover{
+                                    opacity: .9;
+                                    color: white;
+                                }
                             }
                         }
                         .b-contenedor{
                             .b{
+                                font-family: 'Poppins', sans-serif;
+                                font-size: 30px;
+                                color: $gris-claro;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
                                 width: 40px;
                                 height: 40px;
                                 background-color:  $gris;
                                 border-radius: 100px;
+                                &:hover{
+                                    opacity: .9;
+                                    color: white;
+                                }
                             }
                         }
                     }
@@ -131,12 +176,15 @@ body {
                 }
             }
 
-            .base {
-               background-color: black;
-                width: 100%;
-                height: 50px;
-                border-radius: 0px 0px 100% 100%;
-            }
+
         }
+
+        .base {
+            display: block;
+            background-color: $gameboy;
+             width: 320px;
+             height: 50px;
+             border-radius: 0px 0px 100% 100%;
+         }
     }
 }

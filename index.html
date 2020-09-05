@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gameboy Music</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/audioPlayer.js"></script>
+    <link rel="shortcut icon" href="/assets/icon.ico">
 </head>
 <body>
     <!-- <h1 class="titulo">Reproductor Gameboy</h1> -->
@@ -25,13 +27,13 @@
                 <div class="cruz">
                     <div class="cruz-contenedor">
                         <div class="box" ></div>
-                        <div class="box btn" id="arriba"></div>
+                        <div class="box btn cursor" id="arriba" onclick="arriba()"></div>
                         <div class="box"></div>
-                        <div class="box btn" id="izq"></div>
-                        <div class="box btn" id="medio"></div>
-                        <div class="box btn" id="der"></div>
+                        <div class="box btn cursor" id="izq" onclick="izq()"></div>
+                        <div class="box btn cursor" id="medio" onclick="medio()"></div>
+                        <div class="box btn cursor" id="der" onclick="der()"></div>
                         <div class="box"></div>
-                        <div class="box btn" id="abajo"></div>
+                        <div class="box btn cursor" id="abajo" onclick="abajo()"></div>
                         <div class="box"></div>
                     </div>
                 </div>
@@ -44,23 +46,56 @@
                     <div class="botones-contenedor">
 
                         <div class="a-contenedor">
-                            <div class="a"></div>
+                            <div class="a cursor" onclick="a()">
+                                <div class="">A</div>
+                            </div>
                         </div>
                        
                         <div class="b-contenedor">
-                            <div class="b"></div>
+                            <div class="b cursor" onclick="b()">
+                                <div class="">B</div>
+                            </div>
                         </div>
                        
                     </div>
 
                 </div>
 
+                <div class="espacio">
+                    <div class="select-contenedor">
+                        <div class="select mini-btn cursor" id="select" onclick="select()">
+
+                        </div>
+                        <!-- <div class="fuente">
+                            select
+                        </div> -->
+                    </div>
+
+                   
+                  
+                </div>
+
+                
+                <div class="espacio">
+ 
+                </div>
+
+                <div class="espacio">
+                    <div class="start mini-btn cursor" id="start" onclick="start()">
+
+                    </div>
+                    <!-- <div  class="fuente" style="font-size: 12px;">
+                         Start
+                    </div> -->
+                </div>
+
 
             </div>
 
-            <div class="base">
+         
 
-            </div>
+        </div>
+        <div class="base">
 
         </div>
     </div>
@@ -68,4 +103,7 @@
 
 
 </body>
+
+<script src="js/controls.js"></script>
+
 </html>

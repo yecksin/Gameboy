@@ -3,10 +3,18 @@ h1 {
   font-family: "Poppins", sans-serif;
 }
 
+.fuente {
+  font-family: "Poppins", sans-serif;
+}
+
 .titulo {
   font-size: 3rem;
   text-align: center;
   color: white;
+}
+
+.cursor {
+  cursor: pointer;
 }
 
 body {
@@ -21,13 +29,15 @@ body .contenedor {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-flow: column;
 }
 body .contenedor .gameboy {
-  border-radius: 15px;
+  margin-top: 30px;
+  display: block;
+  border-radius: 15px 15px 0px 0px;
   background-color: #55E6C1;
   width: 320px;
-  height: 550px;
+  height: 500px;
 }
 body .contenedor .gameboy .pantalla {
   width: 100%;
@@ -57,6 +67,7 @@ body .contenedor .gameboy .controles {
   height: 200px;
   display: grid;
   grid-template-columns: 45% 10% 45%;
+  grid-template-rows: 60% 40%;
 }
 body .contenedor .gameboy .controles .cruz {
   display: flex;
@@ -76,6 +87,10 @@ body .contenedor .gameboy .controles .cruz .cruz-contenedor .box {
   border: 0;
   margin: 0 -4px -4px 0;
 }
+body .contenedor .gameboy .controles .cruz .cruz-contenedor .box:hover {
+  opacity: 0.9;
+  color: white;
+}
 body .contenedor .gameboy .controles .cruz .cruz-contenedor .btn {
   background-color: #3f3e3e;
 }
@@ -94,19 +109,43 @@ body .contenedor .gameboy .controles .cruz .cruz-contenedor #der {
 body .contenedor .gameboy .controles .cruz .cruz-contenedor #abajo {
   border-radius: 0px 0px 5px 5px;
 }
+body .contenedor .gameboy .controles .espacio {
+  position: relative;
+}
+body .contenedor .gameboy .controles .espacio .mini-btn {
+  margin-top: 25px;
+  background-color: #3f3e3e;
+  width: 40px;
+  height: 15px;
+  border-radius: 10px;
+}
+body .contenedor .gameboy .controles .espacio .mini-btn:hover {
+  opacity: 0.9;
+  color: white;
+}
+body .contenedor .gameboy .controles .espacio .select-contenedor {
+  position: absolute;
+  right: 0;
+}
 body .contenedor .gameboy .controles .botones {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 body .contenedor .gameboy .controles .botones .botones-contenedor {
-  width: 80%;
+  width: 70%;
 }
 body .contenedor .gameboy .controles .botones .botones-contenedor .a-contenedor {
   position: relative;
   height: 25px;
 }
 body .contenedor .gameboy .controles .botones .botones-contenedor .a-contenedor .a {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  color: #686868;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   right: 0px;
   width: 40px;
@@ -114,15 +153,30 @@ body .contenedor .gameboy .controles .botones .botones-contenedor .a-contenedor 
   background-color: #3f3e3e;
   border-radius: 100px;
 }
+body .contenedor .gameboy .controles .botones .botones-contenedor .a-contenedor .a:hover {
+  opacity: 0.9;
+  color: white;
+}
 body .contenedor .gameboy .controles .botones .botones-contenedor .b-contenedor .b {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  color: #686868;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   background-color: #3f3e3e;
   border-radius: 100px;
 }
-body .contenedor .gameboy .base {
-  background-color: black;
-  width: 100%;
+body .contenedor .gameboy .controles .botones .botones-contenedor .b-contenedor .b:hover {
+  opacity: 0.9;
+  color: white;
+}
+body .contenedor .base {
+  display: block;
+  background-color: #55E6C1;
+  width: 320px;
   height: 50px;
   border-radius: 0px 0px 100% 100%;
 }
