@@ -23,6 +23,7 @@ body {
   padding: 0;
   margin: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 body .contenedor {
   border-radius: 10px;
@@ -55,9 +56,12 @@ body .contenedor .gameboy .pantalla .capa1 {
   height: 240px;
   border-radius: 10px;
 }
-body .contenedor .gameboy .pantalla .capa1 .capa2 {
-  background-color: royalblue;
-  background-color: gray;
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 {
+  width: 200px;
+  height: 160px;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 {
+  background-size: cover;
   width: 200px;
   height: 160px;
   border-radius: 10px;
@@ -179,6 +183,147 @@ body .contenedor .base {
   width: 320px;
   height: 50px;
   border-radius: 0px 0px 100% 100%;
+}
+
+.capa2-fadeIn {
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.lista-contenedor {
+  position: absolute;
+  top: 0;
+  left: 100vw;
+  background-color: #686868;
+  width: 40vw;
+  height: 100vh;
+  transition: left 0.3s ease-in;
+  border-radius: 50px 0 0 50px;
+  box-sizing: border-box;
+  padding: 10px 50px 10px 50px;
+}
+.lista-contenedor .figura {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0px 0px 0px 100%;
+  background-color: #3f3e3e;
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+}
+.lista-contenedor .figura2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0px 100% 0px 0px;
+  background-color: #3f3e3e;
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+}
+.lista-contenedor .cantion-contenedor {
+  cursor: pointer;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.lista-contenedor .cantion-contenedor .cancion {
+  z-index: 200;
+  background-color: #55E6C1;
+  width: 80%;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in;
+}
+.lista-contenedor .cantion-contenedor .cancion:hover {
+  width: 100%;
+}
+.lista-contenedor .cantion-contenedor .cancion h1 {
+  z-index: 200;
+  padding: 0;
+  margin: 10px 0px 10px 9px;
+  border: 0;
+}
+
+.open {
+  left: 60vw;
+}
+
+@keyframes changecolor {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.1, 1.1);
+  }
+}
+.animacionBaile {
+  animation-duration: 0.5s;
+  animation-name: changecolor;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes changew {
+  from {
+    width: 80%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.changew {
+  animation-duration: 0.5s;
+  animation-name: changew;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 /*# sourceMappingURL=style.css.map */

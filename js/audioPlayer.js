@@ -1,6 +1,6 @@
 class AudioPlayer{
-    constructor(){
-        this.src = 'assets/sounds/1.mp3'
+    constructor(ruta){
+        this.src = ruta;
         this.audio = new Audio(this.src);
     }
 

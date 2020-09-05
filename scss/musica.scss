@@ -1,0 +1,110 @@
+.lista-contenedor{
+    position: absolute;
+    top: 0;
+    left :100vw;
+    background-color: $gris-claro;
+    width: 40vw;
+    height:100vh;
+    transition: left 0.3s ease-in;
+    border-radius: 50px 0 0 50px;
+    box-sizing: border-box;
+    padding: 10px 50px 10px 50px;
+    .figura{
+        position: absolute;
+        top:0;
+        right: 0;
+        border-radius: 0px 0px 0px 100%;
+        background-color: $gris;
+        width: 50%;
+        height: 50%;
+        z-index: 1;
+    }
+    .figura2{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 0px 100% 0px 0px;
+        background-color: $gris;
+        width: 50%;
+        height: 50%;
+        z-index: 1;
+    }
+    .cantion-contenedor{
+        cursor: pointer;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+
+        .cancion{
+            z-index: 200;
+            background-color: $gameboy;
+            width: 80%;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s ease-in;
+            &:hover{
+                width: 100%;
+            }
+            h1{
+                z-index: 200;
+                // height: 70px;
+                padding: 0;
+                margin: 10px 0px 10px 9px;
+                border: 0;
+            }
+        }
+    }
+}
+
+.open{
+    left :60vw;
+}
+
+@keyframes changecolor {
+    from {
+
+        transform: scale(1,1);
+    }
+  
+    to {
+        transform: scale(1.1,1.1);
+        
+    }
+
+
+  }
+  
+  .animacionBaile {
+    animation-duration: .5s;
+    animation-name: changecolor;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+
+  @keyframes changew {
+    from {
+
+         width: 80%;
+    }
+  
+    to {
+        width: 100%;
+        
+    }
+
+
+  }
+  
+  .changew {
+    animation-duration: .5s;
+    animation-name: changew;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+

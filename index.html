@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gameboy Music</title>
     <link rel="stylesheet" href="css/style.css">
+    
     <script src="js/audioPlayer.js"></script>
     <link rel="shortcut icon" href="/assets/icon.ico">
 </head>
@@ -16,9 +17,7 @@
 
             <div class="pantalla">
                 <div class="capa1">
-                    <div class="capa2">
-
-                    </div>
+                    <div class="cont-capa2"></div>
                 </div>
             </div>
 
@@ -27,13 +26,13 @@
                 <div class="cruz">
                     <div class="cruz-contenedor">
                         <div class="box" ></div>
-                        <div class="box btn cursor" id="arriba" onclick="arriba()"></div>
+                        <div class="box btn cursor" id="arriba" onclick="abajo()"></div>
                         <div class="box"></div>
                         <div class="box btn cursor" id="izq" onclick="izq()"></div>
                         <div class="box btn cursor" id="medio" onclick="medio()"></div>
                         <div class="box btn cursor" id="der" onclick="der()"></div>
                         <div class="box"></div>
-                        <div class="box btn cursor" id="abajo" onclick="abajo()"></div>
+                        <div class="box btn cursor" id="abajo" onclick=" arriba()"></div>
                         <div class="box"></div>
                     </div>
                 </div>
@@ -100,10 +99,14 @@
         </div>
     </div>
 
+    <div class="lista-contenedor">
+    
+    </div>
+
 
 
 </body>
-
+<script src="js/musica.js"></script>
 <script src="js/controls.js"></script>
 
 </html>
