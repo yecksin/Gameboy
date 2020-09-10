@@ -6,6 +6,7 @@ body {
     margin: 0;
     margin: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
 
     .contenedor {
         
@@ -56,7 +57,25 @@ body {
                             -moz-box-shadow:    inset 0 0 10px #000000;
                             -webkit-box-shadow: inset 0 0 10px #000000;
                             box-shadow:         inset  0 30px 30px -1px #000000;
+                            .pause-cont{
+                                position: absolute;
+                                // background-color: yellow;
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                #pause{
+                                    filter: invert(1);
+                                    width: 35%;
+                                    opacity: .5;
+                                
+                                }
 
+                                .hideIcon{
+                                    display: none;
+                                }
+                            }
                             .contadorTiempo{
                                 position: absolute;
                                 left: 10px;
@@ -133,6 +152,10 @@ body {
                         .box{
                             display: inline-block;
                             // background-color: aqua;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none; 
                             width: 30px;
                             height: 30px;
                             padding: 0;
@@ -197,6 +220,10 @@ body {
                             height: 25px;
                            
                             .a{
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none; 
                                 font-family: 'Poppins', sans-serif;
                                 font-size: 30px;
                                 color: $gris-claro;
@@ -217,6 +244,10 @@ body {
                         }
                         .b-contenedor{
                             .b{
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                user-select: none; 
                                 font-family: 'Poppins', sans-serif;
                                 font-size: 30px;
                                 color: $gris-claro;
@@ -322,5 +353,43 @@ $segundosOn: 7s;
 @-ms-keyframes fadeOn {
     from { opacity: 1; }
     to   { opacity: 0; }
+
+}
+
+$segundosPause: .5s;
+.pause-fadeIn {
+
+
+    -webkit-animation: fadeinPause $segundosPause; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeinPause $segundosPause; /* Firefox < 16 */
+        -ms-animation: fadeinPause $segundosPause; /* Internet Explorer */
+         -o-animation: fadeinPause $segundosPause; /* Opera < 12.1 */
+            animation: fadeinPause $segundosPause;
+
+}
+
+
+
+@keyframes fadeinPause {
+    from { opacity: 0; }
+    to   { opacity: .5; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeinPause {
+    from { opacity: 0; }
+    to   { opacity: .5; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeinPause {
+    from { opacity: 0; }
+    to   { opacity: .5; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeinPause {
+    from { opacity: 0; }
+    to   { opacity: .5; }
 
 }

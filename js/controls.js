@@ -1,5 +1,6 @@
 let index=0;
-
+let tieneImagen = false;
+let baile = false;
 const pantalla = document.querySelectorAll(".capa2");
 
 let cancion = new AudioPlayer(musica[index].ruta);
@@ -8,7 +9,9 @@ function changeCover(cancion){
 document.querySelector('.capa1').innerHTML= `
 <div class="cont-capa2">
     <div class="capa2" style="background-image: url('${cancion.cover}');">
-
+    <div class="pause-cont">
+    <img id="pause" class="pause hideIcon pause-fadeIn " src="assets/icons/pause.svg" alt="Kiwi standing on oval">
+   </div>
         <div class="contadorTiempo">
 
             <div class="tiempo">
@@ -17,6 +20,7 @@ document.querySelector('.capa1').innerHTML= `
             <div class="info info-fadeOn ">
             ${cancion.nombre} - ${cancion.artista}
             </div>
+
   
         </div>
 
@@ -49,7 +53,7 @@ document.querySelector('.capa1').innerHTML= `
 `;
 }
 function arriba(){
-
+    tieneImagen = true;
     console.log("presionaste arriba");
     cancion.pause();
     document.querySelector(".changew-"+(index+1)).classList.remove('changew');
@@ -65,26 +69,33 @@ function arriba(){
     document.querySelector('.cont-capa2').classList.add('capa2-fadeIn');
     cancion = new AudioPlayer(musica[index].ruta)
     cancion.play();
+    ponerBaile ();
 }
 function izq(){
     console.log("presionaste izquierda");
-    
+    cancion.volumeDown();
    
 }
 function medio(){
     console.log("presionaste medio");
+    cancion.setCurrentTime(0);
+    cancion.play();
+    
+   
 }
 function der(){
     console.log("presionaste dercha");
+    cancion.volumeUp();
 }
 function abajo(){
+    tieneImagen = true;
     console.log("presionaste abajo");
     cancion.pause();
     document.querySelector(".changew-"+(index+1)).classList.remove('changew');
     index--;
     if (index < 0 ){
         console.log("mayor");
-        index=4;
+        index=musica.length-1;
     }
     document.querySelector(".changew-"+(index+1)).classList.add('changew');
     console.log("cantidad "+musica.length);
@@ -93,25 +104,44 @@ function abajo(){
     document.querySelector('.cont-capa2').classList.add('capa2-fadeIn');
     cancion = new AudioPlayer(musica[index].ruta)
     cancion.play();  
+    ponerBaile ();
 }
 function a(){
+    if(tieneImagen){
+        cancion.play();
+        document.querySelector("#pause").classList.add("hideIcon")
+        ponerBaile ();
+    }
     console.log("presionaste a");
-    cancion.play();
-    document.querySelector(".changew-"+(index+1)).classList.add('changew');
-    // document.querySelector('.contenedor').classList.add('animacionBaile');
+    // document.querySelector(".changew-"+(index+1)).classList.add('changew');
+    
 }
 function b(){
     console.log("presionaste b");
     cancion.pause();
-    document.querySelector(".changew-"+(index+1)).classList.remove('changew');
-    // document.querySelector('.contenedor').classList.remove('animacionBaile');
+    document.querySelector("#pause").classList.remove("hideIcon")
+    // document.querySelector(".changew-"+(index+1)).classList.remove('changew');
+    quitarBaile();
 }
 function select(){
     console.log("presionaste select");
     document.querySelector('.lista-contenedor').classList.toggle('open');
+   
 }
 function start(){
     console.log("presionaste start");
-    
+    baile=!baile;
+    console.log(baile);
 }
 
+function quitarBaile (){
+    if(baile){
+        document.querySelector('.contenedor').classList.remove('animacionBaile');
+    }
+}
+
+function ponerBaile (){
+    if(baile){
+        document.querySelector('.contenedor').classList.add('animacionBaile');
+    }
+}

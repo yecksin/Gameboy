@@ -13,10 +13,26 @@ class AudioPlayer{
 
     play(){
         this.audio.play().then().catch(err => console.log(`Error al reproducir el archivo: ${err}`));
-
+        
     }
     pause(){
         this.audio.pause();
+        
+    }
+
+    volumeDown(){
+        console.log("Bajar volumen");
+        if(this.audio.volume>.1){
+            this.audio.volume= this.audio.volume -.1;
+        }
+    }
+
+    volumeUp(){
+        console.log("Subir volumen");
+        if(this.audio.volume<=.9){
+            this.audio.volume= this.audio.volume +.1;
+        }
+        
     }
 
     setProgress(e){
