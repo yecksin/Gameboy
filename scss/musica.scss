@@ -1,20 +1,41 @@
+.lista-contenedor::-webkit-scrollbar{
+    width: 10px !important;
+    background-color: rgba(0, 0, 0, 0.397) !important;
+}
+
+.lista-contenedor::-webkit-scrollbar-thumb{
+    width: 7px !important;
+    background-color: $gameboy !important;
+    border-radius: 3px;
+    border-right: rgba(0, 0, 0, 0.034) solid 2px;
+    border-left: rgba(0, 0, 0, 0.062) solid 2px;
+    transition: all .3s ease;
+    border-radius: 10px;
+}
+
+// body{
+//     overflow: overlay;
+// }
 .lista-contenedor{
+
     position: absolute;
     top: 0;
     left :100vw;
-    background-color: $gris-claro;
+    background-color: rgba(0, 0, 0, 0.486);
     width: 40vw;
     height:100vh;
     transition: left 0.3s ease-in;
     border-radius: 50px 0 0 50px;
     box-sizing: border-box;
     padding: 10px 50px 10px 50px;
+    overflow-y: scroll;
+
     .figura{
         position: absolute;
         top:0;
         right: 0;
         border-radius: 0px 0px 0px 100%;
-        background-color: $gris;
+        background-color: rgba(0, 0, 0, 0.397);
         width: 50%;
         height: 50%;
         z-index: 1;
@@ -23,12 +44,26 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        border-radius: 0px 100% 0px 0px;
-        background-color: $gris;
+        border-radius: 0px 100% 100% 0px;
+        background-color: rgba(0, 0, 0, 0.397);
         width: 50%;
         height: 50%;
         z-index: 1;
     }
+    .ContCerrar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .cerrarListaMusica{
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            font-size: 50px;
+            margin: 0;
+            z-index: 200;
+        }
+    }
+
     .cantion-contenedor{
         cursor: pointer;
         z-index: 200;
@@ -37,6 +72,7 @@
         justify-content: center;
         margin-top: 10px;
 
+        
         .cancion{
             z-index: 200;
             background-color: $gameboy;
@@ -46,6 +82,7 @@
             align-items: center;
             justify-content: center;
             transition: all .2s ease-in;
+            font-size: 10px;
             &:hover{
                 width: 100%;
             }
@@ -63,6 +100,34 @@
 .open{
     left :60vw;
 }
+@media(max-width: 1000px){
+    .lista-contenedor{
+        // background-color: rgba(201, 117, 117, 0.486);
+        width: 70vw !important;
+        overflow-y: scroll;
+    }
+    .open{
+        left :30vw;
+    }
+}
+
+@media(max-width: 600px){
+    .lista-contenedor{
+        padding: 10px 10px 10px 10px;
+        width: 100vw !important;
+        overflow-y: scroll;
+        .cantion-contenedor{
+            .cancion{
+                width: 100%;
+            }
+        }
+    
+    }
+    .open{
+        left :0vw;
+    }
+}
+
 
 @keyframes changecolor {
     from {
@@ -106,5 +171,4 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
   }
-
 

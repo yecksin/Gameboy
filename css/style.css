@@ -1,10 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap");
+@font-face {
+  font-family: pixelmix;
+  src: url("/pixelmix.ttf");
+}
 h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: pixelmix, "Poppins", sans-serif;
 }
 
 .fuente {
   font-family: "Poppins", sans-serif;
+}
+
+.textoCarga, .contadorTiempo {
+  font-family: pixelmix, "Poppins", sans-serif;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.tiempo, .info {
+  color: white;
 }
 
 .titulo {
@@ -61,10 +76,53 @@ body .contenedor .gameboy .pantalla .capa1 .cont-capa2 {
   height: 160px;
 }
 body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 {
+  position: relative;
   background-size: cover;
   width: 200px;
   height: 160px;
   border-radius: 10px;
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 30px 30px -1px #000000;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 .contadorTiempo {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 .contadorTiempo .info {
+  width: 200px;
+  position: absolute;
+  top: 20px;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 .loading {
+  top: 90%;
+  transform: translateY(-100%);
+  position: relative;
+  width: 90%;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 5px 1fr 5px;
+  grid-template-rows: 5px 20px 5px;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 .loading .black {
+  background-color: black;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 .loading .progreso {
+  background-color: white;
+  padding: 5px;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 .loading .progreso .porcentajeCarga {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+body .contenedor .gameboy .pantalla .capa1 .cont-capa2 .capa2 .loading .progreso .barra {
+  background-color: #23d623;
+  width: 0%;
+  height: 100%;
+  position: relative;
 }
 body .contenedor .gameboy .controles {
   width: 100%;
@@ -232,24 +290,88 @@ body .contenedor .base {
     opacity: 1;
   }
 }
+.info-fadeOn {
+  -webkit-animation: fadeOn 7s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeOn 7s;
+  /* Firefox < 16 */
+  -ms-animation: fadeOn 7s;
+  /* Internet Explorer */
+  -o-animation: fadeOn 7s;
+  /* Opera < 12.1 */
+  animation: fadeOn 7s;
+  opacity: 0;
+}
+
+@keyframes fadeOn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* Firefox < 16 */
+@-moz-keyframes fadeOn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeOn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* Internet Explorer */
+@-ms-keyframes fadeOn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.lista-contenedor::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: rgba(0, 0, 0, 0.397) !important;
+}
+
+.lista-contenedor::-webkit-scrollbar-thumb {
+  width: 7px !important;
+  background-color: #55E6C1 !important;
+  border-radius: 3px;
+  border-right: rgba(0, 0, 0, 0.034) solid 2px;
+  border-left: rgba(0, 0, 0, 0.062) solid 2px;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
 .lista-contenedor {
   position: absolute;
   top: 0;
   left: 100vw;
-  background-color: #686868;
+  background-color: rgba(0, 0, 0, 0.486);
   width: 40vw;
   height: 100vh;
   transition: left 0.3s ease-in;
   border-radius: 50px 0 0 50px;
   box-sizing: border-box;
   padding: 10px 50px 10px 50px;
+  overflow-y: scroll;
 }
 .lista-contenedor .figura {
   position: absolute;
   top: 0;
   right: 0;
   border-radius: 0px 0px 0px 100%;
-  background-color: #3f3e3e;
+  background-color: rgba(0, 0, 0, 0.397);
   width: 50%;
   height: 50%;
   z-index: 1;
@@ -258,11 +380,24 @@ body .contenedor .base {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-radius: 0px 100% 0px 0px;
-  background-color: #3f3e3e;
+  border-radius: 0px 100% 100% 0px;
+  background-color: rgba(0, 0, 0, 0.397);
   width: 50%;
   height: 50%;
   z-index: 1;
+}
+.lista-contenedor .ContCerrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lista-contenedor .ContCerrar .cerrarListaMusica {
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  font-size: 50px;
+  margin: 0;
+  z-index: 200;
 }
 .lista-contenedor .cantion-contenedor {
   cursor: pointer;
@@ -281,6 +416,7 @@ body .contenedor .base {
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-in;
+  font-size: 10px;
 }
 .lista-contenedor .cantion-contenedor .cancion:hover {
   width: 100%;
@@ -296,6 +432,30 @@ body .contenedor .base {
   left: 60vw;
 }
 
+@media (max-width: 1000px) {
+  .lista-contenedor {
+    width: 70vw !important;
+    overflow-y: scroll;
+  }
+
+  .open {
+    left: 30vw;
+  }
+}
+@media (max-width: 600px) {
+  .lista-contenedor {
+    padding: 10px 10px 10px 10px;
+    width: 100vw !important;
+    overflow-y: scroll;
+  }
+  .lista-contenedor .cantion-contenedor .cancion {
+    width: 100%;
+  }
+
+  .open {
+    left: 0vw;
+  }
+}
 @keyframes changecolor {
   from {
     transform: scale(1, 1);

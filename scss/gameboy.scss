@@ -48,12 +48,62 @@ body {
                         .capa2{
                             // background-color: royalblue;
                             // background-color: gray;
+                            position: relative;
                             background-size: cover;
                             width: 200px;
                             height: 160px;
                             border-radius: 10px;
-                            
-                            
+                            -moz-box-shadow:    inset 0 0 10px #000000;
+                            -webkit-box-shadow: inset 0 0 10px #000000;
+                            box-shadow:         inset  0 30px 30px -1px #000000;
+
+                            .contadorTiempo{
+                                position: absolute;
+                                left: 10px;
+                                top: 10px;
+                                .info{
+                                width: 200px;
+                                position: absolute;
+
+                                    top: 20px;
+                                }
+                            }
+                            .loading{
+                                top: 90%;
+                                transform: translateY(-100%);
+                                position: relative;
+                                width: 90%;
+                                margin: 0px auto;
+                                // background-color: whitesmoke;
+                                display: grid;
+                                grid-template-columns: 5px 1fr 5px;
+                                grid-template-rows: 5px 20px 5px;
+     
+                                .black{
+                                    background-color: black;
+                                }
+                                .progreso{
+                                    background-color: white;
+                                    padding: 5px;
+                                    .porcentajeCarga{
+                                        position: absolute;      
+                                        // background-color: rgb(177, 27, 102);
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        z-index: 100;
+                                        
+                                    }
+                                    .barra{
+                                        background-color: rgb(35, 214, 35);
+                                        width: 0%;
+                                        height: 100%;
+                                        position: relative;
+                
+
+                                    }
+                                }
+    
+                            }
           
                         }
                     }
@@ -211,7 +261,10 @@ $segundos: 2s;
         -ms-animation: fadein $segundos; /* Internet Explorer */
          -o-animation: fadein $segundos; /* Opera < 12.1 */
             animation: fadein $segundos;
+
 }
+
+
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -234,5 +287,40 @@ $segundos: 2s;
 @-ms-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+
+}
+$segundosOn: 7s;
+.info-fadeOn {
+
+
+    -webkit-animation: fadeOn $segundosOn; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeOn $segundosOn; /* Firefox < 16 */
+        -ms-animation: fadeOn $segundosOn; /* Internet Explorer */
+         -o-animation: fadeOn $segundosOn; /* Opera < 12.1 */
+            animation: fadeOn $segundosOn;
+            opacity: 0;
+}
+
+@keyframes fadeOn {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeOn{
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeOn {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeOn {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 
 }
